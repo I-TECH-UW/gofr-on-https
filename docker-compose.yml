@@ -11,8 +11,8 @@ services:
   fhir:
     container_name: hapi-fhir
     image: hapiproject/hapi:v5.5.2
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080"
     restart: always
     depends_on:
       - redis
@@ -50,9 +50,9 @@ services:
     #   - "4000:4000"
     restart: always
 
-  nginx:
+  nginx-gofr:
     image: nginx:latest
-    container_name: nginx
+    container_name: nginx-gofr
     restart: always
     ports:
       - 80:80
